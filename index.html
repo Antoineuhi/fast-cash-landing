@@ -29,7 +29,7 @@
     <h2>Secure Your Slot</h2>
     <!-- Calendly Inline Embed -->
     <div id="schedule_embed">
-      <iframe src="YOUR_CALENDLY_EMBED_URL" width="100%" height="600" frameborder="0"></iframe>
+      <iframe src="https://calendly.com/franckpoppers52/30min" width="100%" height="600" frameborder="0"></iframe>
     </div>
   </div>
   <footer>&copy; 2025 AI Profit Sprint</footer>
@@ -38,7 +38,7 @@
   <script>
     const stripe = Stripe('pk_test_YOUR_STRIPE_KEY');
     document.getElementById('checkout-button').addEventListener('click', () => {
-      stripe.redirectToCheckout({ lineItems:[{ price: 'YOUR_STRIPE_PRICE_ID', quantity:1 }], mode:'payment', successUrl: window.location, cancelUrl: window.location });
+      stripe.redirectToCheckout({ lineItems:[{ price: 'price_1RJJzRCBNehwJee0RQov5IhM', quantity:1 }], mode:'payment', successUrl: window.location, cancelUrl: window.location });
     });
   </script>
 </body>
