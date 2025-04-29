@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Profit Sprint</title>
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; }
+    header { background:#222; color:#fff; padding:2rem; text-align:center; }
+    .container { padding:2rem; }
+    .btn { display:inline-block; padding:1rem 2rem; margin:0.5rem; border:none; background:#0070f3; color:#fff; cursor:pointer; border-radius:0.5rem; }
+    footer { text-align:center; padding:1rem; font-size:0.8rem; color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI Profit Sprint: \$2,500 24-hr Funnel</h1>
+    <p>Landing page + email sequence + chatbot automated in 24h</p>
+    <!-- Stripe Checkout Button -->
+    <button class="btn" id="checkout-button">Book Now – \$2,500</button>
+  </header>
+  <div class="container">
+    <h2>Why This Works</h2>
+    <ul>
+      <li>✅ AI-generated copy & design for instant launch</li>
+      <li>✅ Automated follow-ups with zero manual work</li>
+      <li>✅ Proven sales funnel tested on 50+ SMBs</li>
+    </ul>
+    <h2>Secure Your Slot</h2>
+    <!-- Calendly Inline Embed -->
+    <div id="schedule_embed">
+      <iframe src="YOUR_CALENDLY_EMBED_URL" width="100%" height="600" frameborder="0"></iframe>
+    </div>
+  </div>
+  <footer>&copy; 2025 AI Profit Sprint</footer>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe('pk_test_YOUR_STRIPE_KEY');
+    document.getElementById('checkout-button').addEventListener('click', () => {
+      stripe.redirectToCheckout({ lineItems:[{ price: 'YOUR_STRIPE_PRICE_ID', quantity:1 }], mode:'payment', successUrl: window.location, cancelUrl: window.location });
+    });
+  </script>
+</body>
+</html>
